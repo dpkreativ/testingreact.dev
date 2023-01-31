@@ -35,7 +35,15 @@ describe('The <Checkbox /> component', () => {
     expect(getByLabelText(defaultCheckboxProps.label)).toBeInTheDocument()
   })
 
-  it('❌ Should call the onChange handler when it is provided', () => {})
+  it('❌ Should call the onChange handler when it is provided', () => {
+    const { getByLabelText } = setupCheckbox()
+
+    const checkbox = getByLabelText(defaultCheckboxProps.label)
+
+    fireEvent.click(checkbox)
+
+    expect(defaultCheckboxProps.onChange).toHaveBeenCalled()
+  })
 
   it('❌ Should change state correctly when clicked (checked and unchecked)', () => {})
 
