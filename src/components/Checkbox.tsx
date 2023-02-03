@@ -14,11 +14,11 @@ interface CheckboxPropsInterface {
 const Checkbox: FunctionComponent<CheckboxPropsInterface> = ({
   label,
   id,
-  onChange,
-  borderColor,
   checked = false,
   background = '#000',
   checkMarkBackground = '#fff',
+  borderColor,
+  onChange,
 }) => (
   <Wrapper data-testid="Checkbox">
     <Input checked={checked} onChange={onChange} type="checkbox" id={id} />
